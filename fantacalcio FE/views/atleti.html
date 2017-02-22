@@ -1,0 +1,65 @@
+<div>
+	<form ng-submit="save(item)">
+        <input class="form-control" ng-model="item.nome" type="text" placeholder="nome" >
+        <input class="form-control" ng-model="item.cf" type="text" placeholder="codice fiscale" >
+		<input class="form-control" ng-model="item.telefono" type="number" placeholder="telefono" >
+        <input class="form-control" ng-model="item.datanascita" type="date" placeholder="data nascita" >
+		<input class="form-control" ng-model="item.sesso" type="text" placeholder="sesso" >
+		<button type="submit" class="btn btn-primary">salva</button>
+    </form>
+	</br>
+</div>
+
+<div>
+    <table  class="table table-striped table-bordered responsive">
+	
+	<thead>
+		<tr>
+			<td>
+			ID
+			</td>
+			<td>
+			NOME
+			</td>
+			<td>
+			CODICE FISCALE
+			</td>
+			<td>
+			TELEFONO
+			</td>
+			<td>
+			DATA DI NASCITA
+			</td>
+			<td>
+			SESSO
+			</td>
+			<td>
+			CANCELLA
+			</td>
+		</tr>
+	</thead>
+	<tr ng-repeat="(key,item) in items">
+	<td>
+	 {{ item.id }}
+    </td>
+	<td>
+	{{ item.nome }}
+    </td>
+	<td>
+	{{ item.cf }}
+    </td>
+	<td>
+	 {{ item.telefono }}
+	 </td>
+	 <td>
+    {{ item.datanascita || date }}
+	</td>
+	<td>
+    {{ item.sesso }}
+	</td>
+	<td>
+		<a class="btn btn-sm btn-danger" ng-click="delete(item.id)">Cancella</a>
+	</td>
+	</tr>
+	</table>
+</div>

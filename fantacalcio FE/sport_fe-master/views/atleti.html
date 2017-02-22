@@ -1,0 +1,39 @@
+<h1>
+    Registro degli Atleti
+</h1>
+<p>
+    Questa pagina contiene l'elenco dei tesserati e dovrà:
+    <ul>
+        <li>Permettere la cancellazione e creazione di un elemento</li>
+        <li>Validare la creazione solo con obbligatorierà del campo nome</li>
+        <li>Ad ogni modifica la tabella dovrà aggiornarsi</li>
+        <li>Presentare almeno un comportamento responsivo grazie ad a classi e css</li>
+    </ul>
+</p>
+<table class="table-bordered table table-responsive">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Codice Fiscale</th>
+            <th>Telefono</th>
+            <th>Data di Nascita</th>
+            <th>Sesso</th>
+            <th><em>Azioni</em></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items">
+            <td>{{item.id}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.cf}}</td>
+            <td>{{item.telefono}}</td>
+            <td>{{item.datanascita | date}}</td>
+            <td>{{item.sesso}}</td>
+            <td>
+                <a class="btn btn-sm btn-info" ng-click="view(item.id)"><i class="fa fa-eye"></i> Apri</a>
+                <a class="btn btn-sm btn-danger"  ng-click="del(item.id)"><i class="fa fa-trash"></i> Cancella</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
